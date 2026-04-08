@@ -1,0 +1,58 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python Debugger: main_pretrain.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/mnt/afan/scMETH/main_pretrain.py",
+            "console": "integratedTerminal",
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "1"
+            },
+            // "justMyCode": false,
+            // "subProcess": true,
+            "args": [
+                "--batch_size", "2",
+                "--epochs", "20",
+                "--accum_iter", "1",
+                "--model", "mae_vit_base_patch16",
+                "--mask_ratio", "0.4",
+                "--weight_decay", "0.05",
+                "--blr", "4e-4",
+                "--min_lr", "0.0",
+                "--warmup_epochs", "2",
+                "--data_path", "/mnt/afan/scGEPOP/data/cellxgene/scb_file",
+                "--vocab_path", "/mnt/afan/scGEPOP/scgepop/tokenizer/default_census_vocab.json",
+                "--output_dir", "./output_dir",
+                "--device", "cuda",
+                "--seed", "0",
+                "--pad_token", "<pad>",
+                "--pad_value", "-2",
+                "--valid_ratio", "0.003",
+                "--max_seq_len", "1536",
+                "--start_epoch", "0",
+                "--num_workers", "10",
+                "--world_size", "1",
+                "--local_rank", "-1",
+                "--norm_pix_loss",
+                "--dist_eval",
+                "--pin_mem",
+                "--moe",
+                "--eth_cls"
+                // "--dist_on_itp"
+            ]
+        }
+    ]
+}

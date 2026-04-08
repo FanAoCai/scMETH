@@ -1,0 +1,10 @@
+__pycache__
+
+data/cellxgene/__pycache__
+dataloader/__pycache__
+figures
+model/__pycache__
+output_dir
+util/__pycache__
+nohup.out
+normal_test.py
